@@ -7,17 +7,21 @@ import Experience from './pages/experience'
 import Project from './pages/project'
 import Contact from './pages/contact'
 import './App.css'
+import Navbar from './components/navbar'
 
 function App() {
 
   return (
-    <AppLayout>
-      <Home />
-      <About />
-      <Experience />
-      <Project />
-      <Contact />
-    </AppLayout>
+    <>
+      <Navbar />
+      <AppLayout>
+        <Home />
+        <About />
+        <Experience />
+        <Project />
+        <Contact />
+      </AppLayout>
+    </>
   )
 }
 
