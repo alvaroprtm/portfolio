@@ -15,49 +15,68 @@ const Contact = () => {
   }
 
   return (
-    <div className='bg-abyss min-h-screen w-full relative flex flex-col items-center justify-center py-16'>
-      <h2 className='text-4xl font-bold text-white mb-8 [text-shadow:2px_2px_0_black]'>Contact Me</h2>
-      <form
-        className='bg-[rgba(0,0,0,0.35)] rounded-xl p-8 shadow-lg flex flex-col gap-4 w-full max-w-md'
-        onSubmit={handleSubmit}
-      >
-        <input
-          type='text'
-          name='name'
-          placeholder='Your Name'
-          value={form.name}
-          onChange={handleChange}
-          className='p-3 rounded bg-gray-900 text-white border border-gray-700 focus:outline-none focus:border-blue-400'
-          required
-        />
-        <input
-          type='email'
-          name='email'
-          placeholder='Your Email'
-          value={form.email}
-          onChange={handleChange}
-          className='p-3 rounded bg-gray-900 text-white border border-gray-700 focus:outline-none focus:border-blue-400'
-          required
-        />
-        <textarea
-          name='message'
-          placeholder='Your Message'
-          value={form.message}
-          onChange={handleChange}
-          className='p-3 rounded bg-gray-900 text-white border border-gray-700 focus:outline-none focus:border-blue-400'
-          rows={5}
-          required
-        />
-        <button
-          type='submit'
-          className='bg-blue-600 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition'
+    <div id='contact' className='bg-abyss min-h-screen w-full relative flex flex-col items-center justify-center py-16'>
+      <h2 className='text-5xl font-bold text-white mb-6 [text-shadow:2px_2px_0_black]'>
+          Let's Connect
+      </h2>
+      
+      <p className='text-xl text-gray-300 mb-12 [text-shadow:1px_1px_0_black]'>
+        Ready to dive deeper? Reach out and let's explore opportunities together.
+      </p>
+
+      {/* Contact Cards */}
+      <div className='flex flex-col md:flex-row gap-8 justify-center items-center'>
+        {/* Email Card */}
+        <a
+          href='mailto:alvaro.maharto@outlook.com'
+          className='group bg-gradient-to-br from-black/40 to-black/20 backdrop-blur-xl rounded-2xl p-8 border border-white/10 shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 hover:scale-105 hover:border-cyan-400/50 w-full md:w-80'
         >
-          Send Message
-        </button>
-      </form>
+          <div className='flex flex-col items-center'>
+            <div className='p-4 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-xl border border-cyan-400/30 mb-6 group-hover:scale-110 transition-transform duration-300'>
+              <svg className='w-8 h-8 text-cyan-400' fill='currentColor' viewBox='0 0 24 24'>
+                <path d='M12 13.065l-11.99-7.065v14h23.98v-14l-11.99 7.065zm11.99-9.065h-23.98l11.99 7.065 11.99-7.065z'/>
+              </svg>
+            </div>
+            <h3 className='text-2xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors duration-300'>
+              Email
+            </h3>
+            <p className='text-gray-400 text-lg group-hover:text-white transition-colors duration-300 break-all'>
+              alvaro.maharto@outlook.com
+            </p>
+            <div className='mt-4 text-sm text-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+              Click to send email →
+            </div>
+          </div>
+        </a>
+
+        {/* LinkedIn Card */}
+        <a
+          href='https://www.linkedin.com/in/alvaropratama/'
+          target='_blank'
+          rel='noopener noreferrer'
+          className='group bg-gradient-to-br from-black/40 to-black/20 backdrop-blur-xl rounded-2xl p-8 border border-white/10 shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 hover:scale-105 hover:border-blue-400/50 w-full md:w-80'
+        >
+          <div className='flex flex-col items-center'>
+            <div className='p-4 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-xl border border-blue-400/30 mb-6 group-hover:scale-110 transition-transform duration-300'>
+              <svg className='w-8 h-8 text-blue-400' fill='currentColor' viewBox='0 0 24 24'>
+                <path d='M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.026-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.838-1.563 3.036 0 3.598 2 3.598 4.59v5.606z'/>
+              </svg>
+            </div>
+            <h3 className='text-2xl font-bold text-white mb-3 group-hover:text-blue-300 transition-colors duration-300'>
+              LinkedIn
+            </h3>
+            <p className='text-gray-400 text-lg group-hover:text-white transition-colors duration-300'>
+              @alvaropratama
+            </p>
+            <div className='mt-4 text-sm text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+              View profile →
+            </div>
+          </div>
+        </a>
+      </div>
       <div className='flex gap-8 mt-8'>
         <a
-          href='https://www.linkedin.com/in/alvaroprtm/'
+          href='https://www.linkedin.com/in/alvaropratama/'
           target='_blank'
           rel='noopener noreferrer'
           className='flex items-center gap-2 text-blue-400 hover:text-blue-500 transition text-lg'
@@ -66,7 +85,7 @@ const Contact = () => {
           LinkedIn
         </a>
         <a
-          href='mailto:alvaroprtm@gmail.com'
+          href='mailto:alvaro.maharto@outlook.com'
           className='flex items-center gap-2 text-blue-400 hover:text-blue-500 transition text-lg'
         >
           <svg width="24" height="24" fill="currentColor" className="inline" viewBox="0 0 24 24"><path d="M12 13.065l-11.99-7.065v14h23.98v-14l-11.99 7.065zm11.99-9.065h-23.98l11.99 7.065 11.99-7.065z"/></svg>
@@ -82,7 +101,7 @@ const Contact = () => {
           GitHub
         </a>
         <a
-          href='https://instagram.com/alvaroprtm'
+          href='https://instagram.com/alvaroprtm_'
           target='_blank'
           rel='noopener noreferrer'
           className='flex items-center gap-2 text-blue-400 hover:text-blue-500 transition text-lg'

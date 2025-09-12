@@ -1,4 +1,5 @@
 import React from 'react'
+import SectionLayout from '../layouts/sectionLayout'
 
 const projects = [
   {
@@ -30,8 +31,9 @@ const githubIcon = (
 
 const Project = () => {
   return (
-    <div className='bg-midnight min-h-screen w-full relative flex flex-col items-center py-16'>
-      <h2 className='text-4xl font-bold text-white mb-10 [text-shadow:2px_2px_0_black]'>Projects</h2>
+    // <div className='bg-midnight min-h-screen w-full relative flex flex-col items-center py-16'>
+    //   <h2 className='text-5xl pb-4k font-bold text-white mb-10 [text-shadow:2px_2px_0_black]'>Projects</h2>
+    <SectionLayout title='Projects' bgColor='bg-midnight' id='projects'>
       <div className='flex flex-wrap gap-10 justify-center'>
         {projects.map((project, idx) => (
           <a
@@ -39,7 +41,7 @@ const Project = () => {
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            className='backdrop-blur-lg bg-[rgba(255,255,255,0.08)] border border-gray-700 rounded-2xl shadow-xl flex flex-col items-center w-72 hover:scale-105 hover:bg-[rgba(255,255,255,0.18)] transition-all duration-300 group overflow-hidden'
+            className='backdrop-blur-lg bg-[rgba(255,255,255,0.08)] border border-gray-700 rounded-2xl shadow-xl flex flex-col items-center w-72 hover:scale-105 hover:bg-[rgba(255,255,255,0.18)] transition-all duration-300 group'
           >
             <img
               src={project.image}
@@ -58,7 +60,8 @@ const Project = () => {
           </a>
         ))}
       </div>
-    </div>
+    </SectionLayout>
+    // </div>
   )
 }
 

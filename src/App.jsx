@@ -8,13 +8,15 @@ import Project from './pages/project'
 import Contact from './pages/contact'
 import './App.css'
 import Navbar from './components/navbar'
+import DepthMeter from './components/depthMeter'
 
 function App() {
 
   return (
     <>
-      <Navbar />
+      <DepthMeter />
       <AppLayout>
+        <Navbar />
         <Home />
         <About />
         <Experience />
@@ -24,5 +26,7 @@ function App() {
     </>
   )
 }
+
+// https://neal.fun/deep-sea/
 
 export default App

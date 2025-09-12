@@ -1,4 +1,10 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+body {
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  font-size: 1.2rem;
+}
 
 @layer utilities {
   .scrollbar-hide {
@@ -16,49 +22,28 @@
     background-attachment: fixed;
   }
 
-  .bg-clouds {
-    background-image: url('./assets/cloud_bg.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-  }
-
   .bg-sunlit {
-    position: relative;
-    background: #4fc3f7;
-    /* linear-gradient(to bottom, #4fc3f7 80%, #1565c0 100%); */
-    overflow: hidden;
+  background: linear-gradient(to bottom, #3838af 0%, #25257c 100%);
   }
-  
   .bg-twilight {
-    background: linear-gradient(to bottom, #1565c0 80%, #001f3f 100%);
+    background: linear-gradient(to bottom, #25257c 0%, #141446 100%);
   }
   .bg-midnight {
-    background: linear-gradient(to bottom, #001f3f 80%, #0a0a23 100%);
+    background: linear-gradient(to bottom, #141446 0%, #0a0a23 100%);
   }
   .bg-abyss {
-    background-color: #0a0a23;
+    background: linear-gradient(to bottom, #0a0a23 0%, #05051a 100%);
   }
 
-  .sun-ray {
+
+  /* .bubble {
     position: absolute;
-    top: 0;
-    left: var(--ray-x, 50%);
-    transform: translateX(-50%) rotate(var(--ray-angle, 0deg));
-    transform-origin: top;
-    width: 6px;
-    height: 100%;
-    pointer-events: none;
-    background: linear-gradient(
-      to bottom,
-      rgba(255,255,255,0.7) 0%,
-      rgba(255,255,255,0.1) 60%,
-      transparent 100%
-    );
-    opacity: 0;
-    animation: rayflash 3s infinite;
-    animation-delay: var(--ray-delay, 0s);
-  }
+    bottom: 0;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    animation: bubbleUp 12s linear infinite;
+  } */
+
   .water-wave {
     position: absolute;
     left: 0;
@@ -71,14 +56,54 @@
   }
 }
 
+@keyframes bubbleFloat {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(1);
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+    /* Move a little in a random direction */
+    transform: translate(var(--dx, 8px), var(--dy, -8px)) scale(1.1);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--dx, 8px), var(--dy, -8px)) scale(1.1);
+  }
+}
+
+.bubble {
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  position: fixed;
+  opacity: 0;
+  animation: bubbleFloat 3s linear infinite;
+  will-change: opacity, transform;
+}
+
+@keyframes bubbleUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-100vh) scale(0.7);
+    opacity: 0;
+  }
+}
+
 @keyframes wave {
   0% { background-position-x: 0; }
   100% { background-position-x: 1000px; }
-}
-
-@keyframes rayflash {
-  0%, 80%, 100% { opacity: 0; }
-  10%, 60% { opacity: 0.6; }
 }
 
 html, body, #root {
@@ -86,3 +111,133 @@ html, body, #root {
   margin: 0;
   padding: 0;
 }
+
+@keyframes planeBannerEntrance {
+  0% {
+    left: -50vw;
+  }
+  100% {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.plane-banner-entrance {
+  animation: planeBannerEntrance 4s cubic-bezier(0.77,0,0.175,1) forwards;
+}
+
+@keyframes bannerWave {
+  0%   { transform: translateY(0) rotate(-1deg) skewX(-2deg); }
+  10%  { transform: translateY(-3px) rotate(1deg) skewX(2deg); }
+  20%  { transform: translateY(-6px) rotate(-2deg) skewX(-3deg); }
+  30%  { transform: translateY(-3px) rotate(1deg) skewX(2deg); }
+  40%  { transform: translateY(0) rotate(-1deg) skewX(-2deg); }
+  50%  { transform: translateY(3px) rotate(1deg) skewX(2deg); }
+  60%  { transform: translateY(6px) rotate(-2deg) skewX(-3deg); }
+  70%  { transform: translateY(3px) rotate(1deg) skewX(2deg); }
+  80%  { transform: translateY(0) rotate(-1deg) skewX(-2deg); }
+  90%  { transform: translateY(-3px) rotate(1deg) skewX(2deg); }
+  100% { transform: translateY(0) rotate(-1deg) skewX(-2deg); }
+}
+
+.banner {
+  animation: bannerWave 15s ease-in-out infinite;
+}
+
+.animated-banner {
+  animation: bannerWave 6s ease-in-out infinite;
+}
+
+@keyframes windyGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.windy-gradient {
+  background: linear-gradient(90deg, #fffbe6 0%, #f7e9c4 50%, #fffbe6 100%);
+  background-size: 200% 200%;
+  animation: windyGradient 4s linear infinite;
+}
+
+.rope {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 120px;  
+  height: 16px;     
+  transform: translateX(-50%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.rope::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-bottom: 2px dashed #c2a76c;
+  border-radius: 0 0 60px 60px;      
+}
+
+/* Swimming Animations */
+@keyframes swim-down {
+  0%, 100% { 
+    transform: translateY(0px);
+  }
+  50% { 
+    transform: translateY(18px);
+  }
+}
+
+.animate-swim-down {
+  animation: swim-down 2s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
+}
+
+@keyframes underwaterFloat {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+  }
+  25% { 
+    transform: translateY(-8px) rotate(0.5deg); 
+  }
+  50% { 
+    transform: translateY(-4px) rotate(-0.3deg); 
+  }
+  75% { 
+    transform: translateY(-12px) rotate(0.8deg); 
+  }
+}
+
+@keyframes underwaterSway {
+  0%, 100% { 
+    transform: translateX(0px) skewX(0deg); 
+  }
+  33% { 
+    transform: translateX(3px) skewX(1deg); 
+  }
+  66% { 
+    transform: translateX(-2px) skewX(-0.5deg); 
+  }
+}
+
+.underwater-float {
+  animation: underwaterFloat 6s ease-in-out infinite;
+}
+
+.underwater-sway {
+  animation: underwaterSway 5s ease-in-out infinite;
+}
+
