@@ -1,40 +1,45 @@
+import mindrealityLogo from '../assets/companies/mindreality.jpeg';
+import techbrosLogo from '../assets/companies/techbros.jpeg';
+import workwizeLogo from '../assets/companies/workwize.jpeg';
+import vuLogo from '../assets/companies/vu.png';
+
+import portfolioImage from '../assets/projects/portfolio.png';
+import jailbirdImage from '../assets/projects/jailbird.png';
+import cloudBg from '../assets/cloud_bg.png';
+
 export const experiences = [
   {
     company: "MindReality",
-    logo: "mindreality.jpeg",
+    logo: mindrealityLogo,
     period: "Oct 2022 – May 2023",
     title: "Junior Web Developer Intern",
     location: "Amsterdam, Netherlands",
-    summary:
-      "Developed a full-stack React app with Firebase and improved deployment efficiency through CI/CD pipelines.",
+    summary: "Developed a full-stack React app with Firebase and improved deployment efficiency through CI/CD pipelines.",
   },
-   {
+  {
     company: "Vrije Universiteit Amsterdam",
-    logo: "vu.png",
+    logo: vuLogo,
     period: "Nov 2023 – Dec 2023",
     title: "Teaching Assistant, Statistical Methods",
     location: "Amsterdam, Netherlands",
-    summary:
-      "Led practical sessions and managed grading for group assignments, supporting students in statistical methods.",
+    summary: "Led practical sessions and managed grading for group assignments, supporting students in statistical methods.",
   },
   {
     company: "TechBros",
-    logo: "techbros.jpeg",
+    logo: techbrosLogo,
     period: "Dec 2024 – Feb 2025",
     title: "Software Engineer (Part-time)",
     location: "Düsseldorf, Germany",
-    summary:
-      "Developed ETL pipelines, full-stack solutions, interactive dashboards, and HR automation platforms for telecom and business analytics.",
+    summary: "Developed ETL pipelines, full-stack solutions, interactive dashboards, and HR automation platforms for telecom and business analytics.",
   },
   {
     company: "Workwize",
-    logo: "workwize.jpeg",
+    logo: workwizeLogo,
     period: "Mar 2025 – Sep 2025",
     title: "Data Engineer Intern",
     location: "Amsterdam, Netherlands",
-    summary:
-      "Automated workflows, built internal tools, developed backend services, and ensured data reliability to optimize 3PL logistics operations.",
-  }, 
+    summary: "Automated workflows, built internal tools, developed backend services, and ensured data reliability to optimize 3PL logistics operations.",
+  },
 ];
 
 export const techStacks = {
@@ -78,26 +83,25 @@ export const icons = {
 export const projects = [
   {
     name: "Portfolio Website",
-    image: "/src/assets/projects/portfolio.png",
+    image: portfolioImage,
     github: "https://github.com/alvaroprtm/portfolio",
-    liveDemo: "https://your-portfolio-live-demo.com", // Replace with actual URL
+    liveDemo: "https://alvaroprtm.github.io/portfolio/",
     description: "A personal portfolio built with React and Tailwind CSS, showcasing my skills, projects, and experience.",
   },
   {
     name: "Jail Bird",
-    image: "/src/assets/projects/jailbird.png",
+    image: jailbirdImage,
     github: "https://github.com/evansutanto/software-design-35",
     liveDemo: "https://www.youtube.com/watch?v=KQbXQ8RzRCo", 
     description: "A Java-based prison-themed Tamagotchi game built with JavaFX featuring interactive buttons and tracking systems to monitor and control the character.",
   },
   {
     name: "E-Commerce App",
-    image: "/src/assets/cloud_bg.png",
+    image: cloudBg,
     github: "https://github.com/alvaroprtm/ecommerce-app",
-    liveDemo: "https://your-ecommerce-demo.com", // Replace with actual URL
+    liveDemo: "https://your-ecommerce-demo.com",
     description: "A full-stack e-commerce application with user authentication and payment integration.",
   },
-  // Add more projects as needed
 ];
 
 
