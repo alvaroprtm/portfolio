@@ -70,7 +70,7 @@ body {
     background-image: url('./assets/sky_bg.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: scroll !important;
   }
 
   .bg-sunlit {
