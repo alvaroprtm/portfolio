@@ -1,6 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
 import profile from '../assets/profile.jpg';
-import Bubbles from '../components/bubbles'
 import cvFile from '../assets/CV.pdf';
 import SectionLayout from '../layouts/sectionLayout';
 
@@ -30,12 +28,16 @@ const About = () => {
 
   return (
     <SectionLayout title="About Me" bgColor="bg-sunlit" id="about">
-        <div className='flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-16 px-4'>
-          <div className='w-3xl h-auto'>
-            <img src={profile} alt="Profile" className='rounded-2xl mx-auto' />
+        <div className='flex flex-col lg:flex-row items-center lg:items-start gap-6 sm:gap-8 lg:gap-1 xl:gap-1 px-4'>
+          <div className='flex justify-center items-center w-80 sm:w-96 md:w-[28rem] lg:w-[32rem] xl:w-[36rem] max-w-sm lg:max-w-none'>
+            <img 
+              src={profile} 
+              alt="Profile" 
+              className='w-full h-auto rounded-2xl shadow-lg object-cover aspect-square sm:aspect-auto mr-0 lg:mr-10 xl:mr-10' 
+            />
           </div>
           <div className='text-justify'>
-            <p>
+            <p className='text-base sm:text-lg lg:text-lg'>
               Hi, I’m Alvaro — a Computer Science graduate with a Data Science focus from VU Amsterdam. Originally from Indonesia, I have set my course in the Netherlands to explore opportunities as a Data Engineer or Full-Stack Engineer.
               <br />
               <br />

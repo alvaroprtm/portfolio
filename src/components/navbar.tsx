@@ -1,7 +1,8 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 
 const Navbar = () => {
   const navbarRef = useRef<HTMLDivElement>(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
@@ -14,6 +15,9 @@ const Navbar = () => {
         behavior: 'smooth'
       });
     }
+    
+    // Close mobile menu after navigation
+    setIsMenuOpen(false);
   };
 
   const scrollToTop = () => {
@@ -30,45 +34,120 @@ const Navbar = () => {
         behavior: 'smooth'
       });
     }
+    
+    // Close mobile menu after navigation
+    setIsMenuOpen(false);
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <nav 
-      ref={navbarRef}
-      className="relative w-full z-50"
-    >
-      <div className="bg-[#070c4e] backdrop-blur-sm border-b border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex-shrink-0">
-              <button 
-                onClick={scrollToTop}
-                className="text-white font-bold text-xl hover:text-[#1DCD9F] transition-colors duration-300"
-              >
-                Portfolio
-              </button>
-            </div>
-            
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-8">
-                <button onClick={() => scrollToSection('about')} className="text-white hover:text-[#8189ff] px-3 py-2 text-sm font-medium transition-colors duration-300">
+    <>
+      {/* Desktop Navigation - Hidden on small screens */}
+      <nav 
+        ref={navbarRef}
+        className="hidden md:block relative w-full z-50"
+      >
+        <div className="bg-[#070c4e] backdrop-blur-sm border-b border-gray-800">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between h-16">
+              
+              <div className="flex-shrink-0">
+                <button 
+                  onClick={scrollToTop}
+                  className="text-white font-bold text-lg sm:text-xl hover:text-[#1DCD9F] transition-colors duration-300"
+                >
+                  <img src='/logo.svg' alt='Logo' className='h-8 w-8 inline-block mr-2 -mt-1' />
+                </button>
+              </div>
+              
+              {/* Desktop Navigation Links */}
+              <div className="ml-10 flex items-baseline space-x-4 lg:space-x-8">
+                <button onClick={() => scrollToSection('about')} className="text-white hover:text-[#8189ff] px-2 lg:px-3 py-2 text-sm lg:text-base font-medium transition-colors duration-300">
                   About
                 </button>
-                <button onClick={() => scrollToSection('experience')} className="text-white hover:text-[#1DCD9F] px-3 py-2 text-sm font-medium transition-colors duration-300">
+                <button onClick={() => scrollToSection('experience')} className="text-white hover:text-[#8189ff] px-2 lg:px-3 py-2 text-sm lg:text-base font-medium transition-colors duration-300">
                   Experience
                 </button>
-                <button onClick={() => scrollToSection('projects')} className="text-white hover:text-[#1DCD9F] px-3 py-2 text-sm font-medium transition-colors duration-300">
+                <button onClick={() => scrollToSection('projects')} className="text-white hover:text-[#8189ff] px-2 lg:px-3 py-2 text-sm lg:text-base font-medium transition-colors duration-300">
                   Projects
                 </button>
-                <button onClick={() => scrollToSection('contact')} className="text-white hover:text-[#1DCD9F] px-3 py-2 text-sm font-medium transition-colors duration-300">
+                <button onClick={() => scrollToSection('contact')} className="text-white hover:text-[#8189ff] px-2 lg:px-3 py-2 text-sm lg:text-base font-medium transition-colors duration-300">
                   Contact
                 </button>
               </div>
             </div>
           </div>
         </div>
+      </nav>
+
+      {/* Mobile Floating Menu - Only visible on small screens */}
+      <div className="md:hidden">
+        {/* Floating Hamburger Button - Top Left */}
+        <button
+          onClick={toggleMenu}
+          className="fixed top-4 left-4 z-50 bg-black/80 backdrop-blur-sm text-white hover:text-[#8189ff] focus:outline-none focus:text-[#8189ff] transition-all duration-300 p-3 rounded-xl border border-gray-700 shadow-lg"
+          aria-label="Toggle menu"
+        >
+          <svg
+            className="h-6 w-6"
+            stroke="currentColor"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            {isMenuOpen ? (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            ) : (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            )}
+          </svg>
+        </button>
+
+        {/* Floating Dropdown Menu */}
+        <div className={`fixed top-20 left-4 z-40 transition-all duration-300 ease-in-out ${isMenuOpen ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform -translate-y-4 pointer-events-none'}`}>
+          <div className="bg-black/90 backdrop-blur-sm border border-gray-700 rounded-xl shadow-2xl min-w-48">
+            <div className="p-2 space-y-1">
+              <button 
+                onClick={() => scrollToSection('about')} 
+                className="block w-full text-left text-white hover:text-[#8189ff] hover:bg-white/10 px-4 py-3 text-base font-medium transition-all duration-300 rounded-lg"
+              >
+                About
+              </button>
+              <button 
+                onClick={() => scrollToSection('experience')} 
+                className="block w-full text-left text-white hover:text-[#8189ff] hover:bg-white/10 px-4 py-3 text-base font-medium transition-all duration-300 rounded-lg"
+              >
+                Experience
+              </button>
+              <button 
+                onClick={() => scrollToSection('projects')} 
+                className="block w-full text-left text-white hover:text-[#8189ff] hover:bg-white/10 px-4 py-3 text-base font-medium transition-all duration-300 rounded-lg"
+              >
+                Projects
+              </button>
+              <button 
+                onClick={() => scrollToSection('contact')} 
+                className="block w-full text-left text-white hover:text-[#8189ff] hover:bg-white/10 px-4 py-3 text-base font-medium transition-all duration-300 rounded-lg"
+              >
+                Contact
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-    </nav>
+    </>
   );
 };
 

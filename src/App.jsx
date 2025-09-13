@@ -1,12 +1,9 @@
-import { useState } from 'react'
-import { BrowserRouter, Routes, Route} from 'react-router-dom'
 import AppLayout from './layouts/appLayout'
 import Home from './pages/home'
 import About from './pages/about'
 import Experience from './pages/experience'
 import Project from './pages/project'
 import Contact from './pages/contact'
-import './App.css'
 import Navbar from './components/navbar'
 import DepthMeter from './components/depthMeter'
 
@@ -26,7 +23,5 @@ function App() {
     </>
   )
 }
-
-// https://neal.fun/deep-sea/
 
 export default App

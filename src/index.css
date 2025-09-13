@@ -1,11 +1,41 @@
+/* ===== IMPORTS ===== */
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
-body {
-  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
-  font-size: 1.2rem;
+/* ===== BASE STYLES ===== */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
+body {
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  font-size: 1rem;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 640px) {
+  .plane-banner-entrance {
+    animation: none !important;
+  }
+  
+  .banner {
+    max-width: calc(100vw - 2rem);
+  }
+
+  .text-shadow-sm {
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .banner {
+    max-width: 70vw;
+  }
+}
+
+/* ===== UTILITY CLASSES ===== */
 @layer utilities {
   .scrollbar-hide {
     scrollbar-width: none; /* Firefox */
@@ -15,6 +45,7 @@ body {
     display: none; /* Chrome, Safari, Opera */
   }
   
+  /* Background Utilities */
   .bg-sky {
     background-image: url('./assets/sky_bg.jpg');
     background-size: cover;
@@ -22,28 +53,30 @@ body {
     background-attachment: fixed;
   }
 
-  .bg-sunlit {
-  background: linear-gradient(to bottom, #3838af 0%, #25257c 100%);
+  .bg-abyss-image {
+    background-image: url('./assets/abyss_bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
   }
+
+  .bg-sunlit {
+    background: linear-gradient(to bottom, #3838af 0%, #25257c 100%);
+  }
+
   .bg-twilight {
     background: linear-gradient(to bottom, #25257c 0%, #141446 100%);
   }
+
   .bg-midnight {
     background: linear-gradient(to bottom, #141446 0%, #0a0a23 100%);
   }
+
   .bg-abyss {
     background: linear-gradient(to bottom, #0a0a23 0%, #05051a 100%);
   }
 
-
-  /* .bubble {
-    position: absolute;
-    bottom: 0;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.15);
-    animation: bubbleUp 12s linear infinite;
-  } */
-
+  /* Water Wave Effect */
   .water-wave {
     position: absolute;
     left: 0;
@@ -56,6 +89,67 @@ body {
   }
 }
 
+/* ===== BUBBLE ANIMATIONS ===== */
+.bubble {
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  position: fixed;
+  opacity: 0;
+  animation: bubbleFloat 3s linear infinite;
+  will-change: opacity, transform;
+}
+
+/* ===== BANNER ELEMENTS ===== */
+.banner {
+  animation: bannerWave 15s ease-in-out infinite;
+}
+
+.animated-banner {
+  animation: bannerWave 6s ease-in-out infinite;
+}
+
+.plane-banner-entrance {
+  animation: planeBannerEntrance 4s cubic-bezier(0.77,0,0.175,1) forwards;
+}
+
+.windy-gradient {
+  background: linear-gradient(90deg, #fffbe6 0%, #f7e9c4 50%, #fffbe6 100%);
+  background-size: 200% 200%;
+  animation: windyGradient 4s linear infinite;
+}
+
+/* ===== ANIMATION CLASSES ===== */
+.animate-swim-down {
+  animation: swim-down 2s ease-in-out infinite;
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
+}
+
+.underwater-float {
+  animation: underwaterFloat 3s ease-in-out infinite;
+}
+
+.underwater-sway {
+  animation: underwaterSway 4s ease-in-out infinite;
+}
+
+/* ===== KEYFRAMES ===== */
+@keyframes swim-down {
+  0%, 100% { 
+    transform: translateY(0px);
+  }
+  50% { 
+    transform: translateY(18px);
+  }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
 @keyframes bubbleFloat {
   0% {
     opacity: 0;
@@ -66,7 +160,6 @@ body {
   }
   50% {
     opacity: 1;
-    /* Move a little in a random direction */
     transform: translate(var(--dx, 8px), var(--dy, -8px)) scale(1.1);
   }
   90% {
@@ -76,15 +169,6 @@ body {
     opacity: 0;
     transform: translate(var(--dx, 8px), var(--dy, -8px)) scale(1.1);
   }
-}
-
-.bubble {
-  border-radius: 50%;
-  background: rgba(255,255,255,0.3);
-  position: fixed;
-  opacity: 0;
-  animation: bubbleFloat 3s linear infinite;
-  will-change: opacity, transform;
 }
 
 @keyframes bubbleUp {
@@ -106,24 +190,18 @@ body {
   100% { background-position-x: 1000px; }
 }
 
-html, body, #root {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
 @keyframes planeBannerEntrance {
   0% {
-    left: -50vw;
+    transform: translateX(-100vw);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
   }
   100% {
-    left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(0);
+    opacity: 1;
   }
-}
-
-.plane-banner-entrance {
-  animation: planeBannerEntrance 4s cubic-bezier(0.77,0,0.175,1) forwards;
 }
 
 @keyframes bannerWave {
@@ -140,14 +218,6 @@ html, body, #root {
   100% { transform: translateY(0) rotate(-1deg) skewX(-2deg); }
 }
 
-.banner {
-  animation: bannerWave 15s ease-in-out infinite;
-}
-
-.animated-banner {
-  animation: bannerWave 6s ease-in-out infinite;
-}
-
 @keyframes windyGradient {
   0% {
     background-position: 0% 50%;
@@ -155,55 +225,6 @@ html, body, #root {
   100% {
     background-position: 100% 50%;
   }
-}
-
-.windy-gradient {
-  background: linear-gradient(90deg, #fffbe6 0%, #f7e9c4 50%, #fffbe6 100%);
-  background-size: 200% 200%;
-  animation: windyGradient 4s linear infinite;
-}
-
-.rope {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  width: 120px;  
-  height: 16px;     
-  transform: translateX(-50%);
-  z-index: 2;
-  pointer-events: none;
-}
-
-.rope::before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  border-bottom: 2px dashed #c2a76c;
-  border-radius: 0 0 60px 60px;      
-}
-
-/* Swimming Animations */
-@keyframes swim-down {
-  0%, 100% { 
-    transform: translateY(0px);
-  }
-  50% { 
-    transform: translateY(18px);
-  }
-}
-
-.animate-swim-down {
-  animation: swim-down 2s ease-in-out infinite;
-}
-
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
-}
-
-.animate-blink {
-  animation: blink 1s infinite;
 }
 
 @keyframes underwaterFloat {
@@ -231,13 +252,5 @@ html, body, #root {
   66% { 
     transform: translateX(-2px) skewX(-0.5deg); 
   }
-}
-
-.underwater-float {
-  animation: underwaterFloat 6s ease-in-out infinite;
-}
-
-.underwater-sway {
-  animation: underwaterSway 5s ease-in-out infinite;
 }
 

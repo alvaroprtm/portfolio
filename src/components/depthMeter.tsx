@@ -52,18 +52,20 @@ const DepthMeter = () => {
   const { zone, color } = getDepthZone(depth);
 
   return (
-    <div className="fixed flex flex-col justify-center items-center right-4 top-1/2 transform -translate-y-1/2 z-40 bg-black/80 backdrop-blur-sm rounded-xl p-4 w-25 border border-gray-700">
+    <div className="fixed flex flex-col justify-center items-center right-4 top-4 md:top-1/2 md:transform md:-translate-y-1/2 z-40 bg-black/80 backdrop-blur-sm rounded-xl p-4 md:w-25 w-20 border border-gray-700 shadow-2xls">
       <div className="text-center">
-        <div className="text-white text-sm font-medium mb-1">Depth</div>
-        <div className="text-xl font-bold text-cyan-400 mb-2">
+        <div className="text-white text-sm font-medium mb-1 md:block">Depth</div>
+        
+        <div className="text-lg md:text-xl font-bold text-cyan-400 mb-2">
           {depth.toLocaleString()}m
         </div>
+        
         <div className={`text-xs ${color} font-medium`}>
           {zone}
         </div>
       </div>
 
-      <div className="w-5 h-32 bg-gray-600 rounded-full mt-3 relative overflow-hidden">
+      <div className="w-5 h-32 bg-gray-600 rounded-full mt-3 relative overflow-hidden hidden md:block">
         <div
           className="absolute top-0 w-full bg-gradient-to-t from-blue-950 via-blue-800 to-blue-400 transition-all duration-300 ease-out"
           style={{ height: `${Math.min((depth / 7000) * 100, 100)}%` }}
