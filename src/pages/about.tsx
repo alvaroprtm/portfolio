@@ -36,7 +36,7 @@ const About = () => {
               className='w-full h-auto rounded-2xl shadow-lg object-cover mr-0 lg:mr-10 xl:mr-10' 
             />
           </div>
-          <div className='text-justify'>
+          <div className='text-left sm:text-justify'>
             <p className='text-base sm:text-lg lg:text-lg'>
               Hi, I’m Alvaro — a Computer Science graduate with a Data Science focus from VU Amsterdam. Originally from Indonesia, I have set my course in the Netherlands to explore opportunities as a Data Engineer or Full-Stack Engineer.
               <br />
