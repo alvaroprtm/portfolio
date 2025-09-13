@@ -1,7 +1,15 @@
 import React from 'react';
 
 const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-    <div id="scroll-container" className="h-screen w-full overflow-y-scroll snap-y snap-mandatory scrollbar-hide">
+    <div 
+        id="scroll-container" 
+        className="h-screen w-full overflow-y-scroll snap-y snap-mandatory scrollbar-hide"
+        style={{
+            overscrollBehaviorX: 'none',
+            touchAction: 'pan-y',
+            WebkitOverflowScrolling: 'touch'
+        }}
+    >
         {children}
     </div>
 );
