@@ -5,9 +5,8 @@ import vuLogo from '../assets/companies/vu.png';
 
 import portfolioImage from '../assets/projects/portfolio.png';
 import jailbirdImage from '../assets/projects/jailbird.png';
-import cloudBg from '../assets/cloud_bg.png';
+import padellers from '../assets/projects/padellers.png';
 
-// Import tech stack SVGs
 import jsLogo from '../assets/tech_stack/js.svg';
 import reactLogo from '../assets/tech_stack/react.svg';
 import tailwindLogo from '../assets/tech_stack/tailwind.svg';
@@ -114,10 +113,10 @@ export const projects = [
     description: "A Java-based prison-themed Tamagotchi game built with JavaFX featuring interactive buttons and tracking systems to monitor and control the character.",
   },
   {
-    name: "E-Commerce App",
-    image: cloudBg,
-    github: "https://github.com/alvaroprtm/ecommerce-app",
-    liveDemo: "https://your-ecommerce-demo.com",
+    name: "Padellers",
+    image: padellers,
+    github: "https://github.com/alvaroprtm/padellers-ecommerce-backend",
+    liveDemo: null,
     description: "A full-stack e-commerce application with user authentication and payment integration.",
   },
 ];
