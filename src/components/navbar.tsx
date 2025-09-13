@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react';
-import logo from '../assets/logo.png';
 
 const Navbar = () => {
   const navbarRef = useRef<HTMLDivElement>(null);
@@ -60,7 +59,7 @@ const Navbar = () => {
                   onClick={scrollToTop}
                   className="text-white font-bold text-lg sm:text-xl hover:text-blue-600 transition-colors duration-300"
                 >
-                  <img src={logo} alt='Logo' className='h-auto w-40 inline-block mr-2 -mt-1' />
+                  <img src="/portfolio/logo.png" alt='Logo' className='h-auto w-40 inline-block mr-2 -mt-1' />
                 </button>
               </div>
               
