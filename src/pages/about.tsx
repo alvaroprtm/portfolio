@@ -28,7 +28,7 @@ const About = () => {
 
   return (
     <SectionLayout title="About Me" bgColor="bg-sunlit" id="about">
-        <div className='flex flex-col lg:flex-row justify-center items-center lg:items-start gap-6 sm:gap-8 lg:gap-1 xl:gap-1 px-10 sm:px-20 lg:px-20'>
+        <div className='flex flex-col lg:flex-row justify-center items-center lg:items-start gap-6 sm:gap-8 lg:gap-1 xl:gap-1 px-10 sm:px-20 sm:mx-10 lg:mx-10 lg:px-20'>
           <div className='flex justify-center items-center w-80 sm:w-96 md:w-[28rem] lg:w-[32rem] xl:w-[36rem] max-w-sm lg:max-w-none'>
             <img 
               src={profile} 
@@ -46,12 +46,12 @@ const About = () => {
               <br />
               This portfolio is my ocean so dive in, explore, and discover the projects and experiences that have shaped my journey.
             </p>
-            <div className='flex gap-4 flex-wrap mt-5'>
+            <div className='flex gap-4 flex-wrap mt-5 justify-center items-center sm:justify-center sm:items-center lg:justify-start'>
               <button
                 onClick={handleDownloadCV}
                 className='group relative bg-black/100 px-8 py-3 rounded-lg font-semibold shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:text-gray-800 active:scale-95 overflow-hidden'
               >
-                <span className='relative z-10 flex items-center gap-2'>
+                <span className='relative z-10 flex items-center gap-2 text-base sm:text-lg lg:text-lg'>
                   <svg className='w-5 h-5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                     <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z' />
                   </svg>
@@ -62,9 +62,9 @@ const About = () => {
               
               <button
                 onClick={scrollToContact}
-                className='group relative bg-transparent border-2 border-white text-white px-8 rounded-lg font-semibold shadow-lg transform transition-all duration-300 hover:scale-105 hover:bg-white hover:text-gray-800 active:scale-95'
+                className='group relative bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:bg-white hover:text-gray-800 active:scale-95 overflow-hidden'
               >
-                <span className='flex items-center gap-2'>
+                <span className='flex items-center gap-2 text-base sm:text-lg lg:text-lg'>
                   <svg className='w-5 h-5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                     <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z' />
                   </svg>
@@ -80,3 +80,5 @@ const About = () => {
 }
 
 export default About
+
+

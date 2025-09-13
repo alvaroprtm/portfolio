@@ -9,7 +9,7 @@ const Experience = () => {
   const [activeTab, setActiveTab] = React.useState('Frontend');
 
   return (
-  <SectionLayout title='My Journey' bgColor='bg-twilight' id='experience'>
+  <SectionLayout title='My Journey' bgColor='bg-twilight' id='experience' className='pt-10'>
     {/* Experience Cards Section */}
     <div className='flex flex-col justify-center items-center w-full space-y-8 px-4'>
       {experiences.map((exp, idx) => (
