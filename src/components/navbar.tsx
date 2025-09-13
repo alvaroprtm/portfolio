@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import logo from '../assets/logo.svg';
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
   const navbarRef = useRef<HTMLDivElement>(null);
@@ -53,19 +53,19 @@ const Navbar = () => {
       >
         <div className="bg-[#070c4e] backdrop-blur-sm border-b border-gray-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between h-16">
+           <div className="flex items-center h-16">
               
               <div className="flex-shrink-0">
                 <button 
                   onClick={scrollToTop}
-                  className="text-white font-bold text-lg sm:text-xl hover:text-[#1DCD9F] transition-colors duration-300"
+                  className="text-white font-bold text-lg sm:text-xl hover:text-blue-600 transition-colors duration-300"
                 >
-                  <img src='/logo.svg' alt='Logo' className='h-8 w-8 inline-block mr-2 -mt-1' />
+                  <img src={logo} alt='Logo' className='h-auto w-40 inline-block mr-2 -mt-1' />
                 </button>
               </div>
               
               {/* Desktop Navigation Links */}
-              <div className="ml-10 flex items-baseline space-x-4 lg:space-x-8">
+              <div className="flex-1 flex justify-end items-baseline space-x-4 lg:space-x-8">
                 <button onClick={() => scrollToSection('about')} className="text-white hover:text-[#8189ff] px-2 lg:px-3 py-2 text-sm lg:text-base font-medium transition-colors duration-300">
                   About
                 </button>

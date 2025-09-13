@@ -23,7 +23,7 @@ const TechStackCard: React.FC<TechStackCardProps> = ({ name, svg, level }) => {
         {svg ? (
           <div className='relative mb-4'>
             <img
-              src={`/src/assets/tech_stack/${svg}`}
+              src={`${svg}`}
               alt={name}
               className='w-16 h-16 group-hover:scale-110 transition-transform duration-300'
             />

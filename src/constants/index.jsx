@@ -7,6 +7,24 @@ import portfolioImage from '../assets/projects/portfolio.png';
 import jailbirdImage from '../assets/projects/jailbird.png';
 import cloudBg from '../assets/cloud_bg.png';
 
+// Import tech stack SVGs
+import jsLogo from '../assets/tech_stack/js.svg';
+import reactLogo from '../assets/tech_stack/react.svg';
+import tailwindLogo from '../assets/tech_stack/tailwind.svg';
+import htmlLogo from '../assets/tech_stack/html.svg';
+import cssLogo from '../assets/tech_stack/css.svg';
+import nodeLogo from '../assets/tech_stack/node.svg';
+import laravelLogo from '../assets/tech_stack/laravel.svg';
+import javaLogo from '../assets/tech_stack/java.svg';
+import pyLogo from '../assets/tech_stack/py.svg';
+import sqlLogo from '../assets/tech_stack/sql.svg';
+import cppLogo from '../assets/tech_stack/cpp.svg';
+import firebaseLogo from '../assets/tech_stack/firebase.svg';
+import circleciLogo from '../assets/tech_stack/circleci.svg';
+import gitLogo from '../assets/tech_stack/git.svg';
+import dockerLogo from '../assets/tech_stack/docker.svg';
+import awsLogo from '../assets/tech_stack/aws.svg';
+
 export const experiences = [
   {
     company: "MindReality",
@@ -44,26 +62,26 @@ export const experiences = [
 
 export const techStacks = {
   Frontend: [
-    { name: 'JavaScript', svg: 'js.svg', level: 'Advanced' },
-    { name: 'React', svg: 'react.svg', level: 'Advanced' },
-    { name: 'TailwindCSS', svg: 'tailwind.svg', level: 'Intermediate' },
-    { name: 'HTML', svg: 'html.svg', level: 'Advanced' },
-    { name: 'CSS', svg: 'css.svg', level: 'Advanced' },
+    { name: 'JavaScript', svg: jsLogo, level: 'Advanced' },
+    { name: 'React', svg: reactLogo, level: 'Advanced' },
+    { name: 'TailwindCSS', svg: tailwindLogo, level: 'Intermediate' },
+    { name: 'HTML', svg: htmlLogo, level: 'Advanced' },
+    { name: 'CSS', svg: cssLogo, level: 'Advanced' },
   ],
   Backend: [
-    { name: 'Node.js', svg: 'node.svg', level: 'Intermediate' },
-    { name: 'Laravel', svg: 'laravel.svg', level: 'Intermediate' },
-    { name: 'Java', svg: 'java.svg', level: 'Intermediate' },
-    { name: 'Python', svg: 'py.svg', level: 'Advanced' },
-    { name: 'SQL', svg: 'sql.svg', level: 'Advanced' },
-    { name: 'C++', svg: 'cpp.svg', level: 'Basic' },
+    { name: 'Node.js', svg: nodeLogo, level: 'Intermediate' },
+    { name: 'Laravel', svg: laravelLogo, level: 'Intermediate' },
+    { name: 'Java', svg: javaLogo, level: 'Intermediate' },
+    { name: 'Python', svg: pyLogo, level: 'Advanced' },
+    { name: 'SQL', svg: sqlLogo, level: 'Advanced' },
+    { name: 'C++', svg: cppLogo, level: 'Basic' },
   ],
   Tools: [
-    { name: 'Firebase', svg: 'firebase.svg', level: 'Intermediate' },
-    { name: 'CircleCI', svg: 'circleci.svg', level: 'Basic' },
-    { name: 'Git', svg: 'git.svg', level: 'Advanced' },
-    { name: 'Docker', svg: 'docker.svg', level: 'Basic' },
-    { name: 'AWS', svg: 'aws.svg', level: 'Basic' },
+    { name: 'Firebase', svg: firebaseLogo, level: 'Intermediate' },
+    { name: 'CircleCI', svg: circleciLogo, level: 'Basic' },
+    { name: 'Git', svg: gitLogo, level: 'Advanced' },
+    { name: 'Docker', svg: dockerLogo, level: 'Basic' },
+    { name: 'AWS', svg: awsLogo, level: 'Basic' },
   ],
 };
 
@@ -84,7 +102,7 @@ export const projects = [
   {
     name: "Portfolio Website",
     image: portfolioImage,
-    github: "https://github.com/alvaroprtm/portfolio",
+    github: "https://alvaroprtm.github.io/portfolio/",
     liveDemo: "https://alvaroprtm.github.io/portfolio/",
     description: "A personal portfolio built with React and Tailwind CSS, showcasing my skills, projects, and experience.",
   },
