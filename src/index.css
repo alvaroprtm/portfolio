@@ -28,6 +28,14 @@ body {
     box-sizing: border-box;
   }
   
+  /* Fix background attachment issues on mobile */
+  .bg-sky {
+    background-attachment: scroll !important; /* Override fixed attachment on mobile */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
   .plane-banner-entrance {
     animation: none !important;
   }
@@ -60,13 +68,6 @@ body {
   /* Background Utilities */
   .bg-sky {
     background-image: url('./assets/sky_bg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-  }
-
-  .bg-abyss-image {
-    background-image: url('./assets/abyss_bg.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
