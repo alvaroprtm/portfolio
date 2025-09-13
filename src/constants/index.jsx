@@ -84,11 +84,11 @@ export const projects = [
     description: "A personal portfolio built with React and Tailwind CSS, showcasing my skills, projects, and experience.",
   },
   {
-    name: "Data Pipeline",
-    image: "/src/assets/cloud_bg.png",
-    github: "https://github.com/alvaroprtm/data-pipeline",
-    liveDemo: null, // No live demo for this project
-    description: "An automated ETL pipeline for processing and analyzing large datasets using Python.",
+    name: "Jail Bird",
+    image: "/src/assets/projects/jailbird.png",
+    github: "https://github.com/evansutanto/software-design-35",
+    liveDemo: "https://www.youtube.com/watch?v=KQbXQ8RzRCo", 
+    description: "A Java-based prison-themed Tamagotchi game built with JavaFX featuring interactive buttons and tracking systems to monitor and control the character.",
   },
   {
     name: "E-Commerce App",

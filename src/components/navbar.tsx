@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import logo from '../assets/logo.svg';
 
 const Navbar = () => {
   const navbarRef = useRef<HTMLDivElement>(null);

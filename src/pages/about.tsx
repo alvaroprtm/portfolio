@@ -28,7 +28,7 @@ const About = () => {
 
   return (
     <SectionLayout title="About Me" bgColor="bg-sunlit" id="about">
-        <div className='flex flex-col lg:flex-row items-center lg:items-start gap-6 sm:gap-8 lg:gap-1 xl:gap-1 px-4'>
+        <div className='flex flex-col lg:flex-row justify-center items-center lg:items-start gap-6 sm:gap-8 lg:gap-1 xl:gap-1 px-10 sm:px-20 lg:px-20'>
           <div className='flex justify-center items-center w-80 sm:w-96 md:w-[28rem] lg:w-[32rem] xl:w-[36rem] max-w-sm lg:max-w-none'>
             <img 
               src={profile} 
@@ -62,7 +62,7 @@ const About = () => {
               
               <button
                 onClick={scrollToContact}
-                className='group relative bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold shadow-lg transform transition-all duration-300 hover:scale-105 hover:bg-white hover:text-gray-800 active:scale-95'
+                className='group relative bg-transparent border-2 border-white text-white px-8 rounded-lg font-semibold shadow-lg transform transition-all duration-300 hover:scale-105 hover:bg-white hover:text-gray-800 active:scale-95'
               >
                 <span className='flex items-center gap-2'>
                   <svg className='w-5 h-5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>

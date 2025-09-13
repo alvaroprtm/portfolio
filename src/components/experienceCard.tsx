@@ -52,7 +52,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
       <div className='flex flex-col md:flex-row md:justify-between md:items-center mb-1'>
         <div className='flex items-center mb-2 md:mb-0'>
           <img
-            src={`/src/assets/${logo}`}
+            src={`/src/assets/companies/${logo}`}
             alt={company}
             className='w-7 h-7 p-1 hover:rotate-12 transition-transform duration-300'
           />
