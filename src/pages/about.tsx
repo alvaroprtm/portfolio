@@ -29,11 +29,11 @@ const About = () => {
   return (
     <SectionLayout title="About Me" bgColor="bg-sunlit" id="about">
         <div className='flex flex-col lg:flex-row justify-center items-center lg:items-start gap-6 sm:gap-8 lg:gap-1 xl:gap-1 px-10 sm:px-20 sm:mx-10 lg:mx-10 lg:px-20'>
-          <div className='flex justify-center items-center w-80 sm:w-96 md:w-[28rem] lg:w-[32rem] xl:w-[36rem] max-w-sm lg:max-w-none'>
+          <div className='flex justify-center items-center w-40 sm:w-40 md:w-64 lg:w-[32rem] xl:w-[36rem] max-w-sm lg:max-w-none'>
             <img 
               src={profile} 
               alt="Profile" 
-              className='w-full h-auto rounded-2xl shadow-lg object-cover aspect-square sm:aspect-auto mr-0 lg:mr-10 xl:mr-10' 
+              className='w-full h-auto rounded-2xl shadow-lg object-cover mr-0 lg:mr-10 xl:mr-10' 
             />
           </div>
           <div className='text-justify'>
