@@ -59,7 +59,7 @@ const Home = () => {
   }, [currentText, isDeleting, currentRoleIndex, roles]);
 
   return (
-    <div id="home" className="bg-blue-400 min-h-screen w-full relative overflow-hidden">
+    <div id="home" className="bg-sky min-h-screen w-full relative overflow-hidden">
       <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-6 lg:px-8">
         <div className="plane-banner-entrance flex flex-col sm:flex-row items-center justify-center w-full max-w-6xl">
           <div className="banner bg-gray-200 bg-opacity-80 rounded-xl px-4 py-3 sm:px-6 sm:py-4 lg:px-8 lg:py-4 shadow-lg relative z-10 mb-4 sm:mb-0 sm:ml-[-20px] order-2 sm:order-1">
