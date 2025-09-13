@@ -18,8 +18,8 @@ const Project = () => {
               style={{ borderTopLeftRadius: '1rem', borderTopRightRadius: '1rem' }}
             />
             <div className='p-6 flex flex-col items-center w-full'>
-              <span className='text-xl font-bold text-white mb-2 text-center'>{project.name}</span>
-              <p className='text-gray-200 text-center mb-4'>{project.description}</p>
+              <span className='text-lg font-bold lg:text-xl xl:text-2xl text-white mb-2 text-center'>{project.name}</span>
+              <p className='text-sm lg:text-base text-gray-300 text-center mb-4'>{project.description}</p>
               
               {/* Button container */}
               <div className='flex gap-3 w-full justify-center'>

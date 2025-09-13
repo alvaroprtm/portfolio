@@ -63,7 +63,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
 
       {/* Title and location */}
       <div className='flex flex-col md:flex-row md:justify-between md:items-center mb-2'>
-        <span className='text-2xl font-medium text-white [text-shadow:2px_2px_0_black]'>{title}</span>
+        <span className='text-xl lg:text-2xl xl:text-3xlfont-medium text-white [text-shadow:2px_2px_0_black]'>{title}</span>
         <span className='text-sm text-gray-400'>{location}</span>
       </div>
 
