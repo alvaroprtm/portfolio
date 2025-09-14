@@ -113,7 +113,7 @@ body {
   
   /* Background Utilities */
   .bg-sky {
-    background-image: url('./assets/sky_bg.jpg');
+    background-image: url('./assets/sky_bg.svg');
     background-size: cover;
     background-position: center;
     background-attachment: scroll !important;
