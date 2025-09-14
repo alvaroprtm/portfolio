@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 const Contact = () => {
   return (
-    <div id='contact' className='bg-abyss min-h-screen w-full relative flex flex-col items-center justify-center py-16'>
+    <div id='contact' className='bg-abyss min-h-screen w-full relative flex flex-col items-center justify-center py-36 sm:py-36'>
       <h2 className='text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-6 [text-shadow:2px_2px_0_black]'>
           Let's Connect
       </h2>
@@ -25,21 +25,21 @@ const Contact = () => {
       <div className='flex flex-col md:flex-row gap-8 justify-center items-center'>
         <a
           href='mailto:alvaro.maharto@outlook.com'
-          className='group bg-gradient-to-br from-black/40 to-black/20 backdrop-blur-xl rounded-2xl p-8 border border-white/10 shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 hover:scale-105 hover:border-cyan-400/50 w-full md:w-80'
+          className='group bg-gradient-to-br from-black/40 to-black/20 backdrop-blur-xl rounded-2xl p-4 sm:p-6 md:p-8 border border-white/10 shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 hover:scale-105 hover:border-cyan-400/50 w-72 sm:w-80 md:w-80'
         >
           <div className='flex flex-col items-center'>
-            <div className='p-4 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-xl border border-cyan-400/30 mb-6 group-hover:scale-110 transition-transform duration-300'>
-              <svg className='w-8 h-8 text-cyan-400' fill='currentColor' viewBox='0 0 24 24'>
+            <div className='p-3 sm:p-4 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-xl border border-cyan-400/30 mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300'>
+              <svg className='w-6 h-6 sm:w-8 sm:h-8 text-cyan-400' fill='currentColor' viewBox='0 0 24 24'>
                 <path d='M12 13.065l-11.99-7.065v14h23.98v-14l-11.99 7.065zm11.99-9.065h-23.98l11.99 7.065 11.99-7.065z'/>
               </svg>
             </div>
-            <h3 className='text-2xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors duration-300'>
+            <h3 className='text-xl sm:text-2xl font-bold text-white mb-2 sm:mb-3 group-hover:text-cyan-300 transition-colors duration-300'>
               Email
             </h3>
-            <p className='text-gray-400 text-lg group-hover:text-white transition-colors duration-300 break-all'>
+            <p className='text-gray-400 text-sm sm:text-lg group-hover:text-white transition-colors duration-300 break-all'>
               alvaro.maharto@outlook.com
             </p>
-            <div className='mt-4 text-sm text-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+            <div className='mt-3 sm:mt-4 text-xs sm:text-sm text-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
               Click to send email →
             </div>
           </div>
@@ -49,21 +49,21 @@ const Contact = () => {
           href='https://www.linkedin.com/in/alvaropratama/'
           target='_blank'
           rel='noopener noreferrer'
-          className='group bg-gradient-to-br from-black/40 to-black/20 backdrop-blur-xl rounded-2xl p-8 border border-white/10 shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 hover:scale-105 hover:border-blue-400/50 w-full md:w-80'
+          className='group bg-gradient-to-br from-black/40 to-black/20 backdrop-blur-xl rounded-2xl p-4 sm:p-6 md:p-8 border border-white/10 shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 hover:scale-105 hover:border-blue-400/50 w-72 sm:w-80 md:w-80'
         >
           <div className='flex flex-col items-center'>
-            <div className='p-4 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-xl border border-blue-400/30 mb-6 group-hover:scale-110 transition-transform duration-300'>
-              <svg className='w-8 h-8 text-blue-400' fill='currentColor' viewBox='0 0 24 24'>
+            <div className='p-3 sm:p-4 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-xl border border-blue-400/30 mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300'>
+              <svg className='w-6 h-6 sm:w-8 sm:h-8 text-blue-400' fill='currentColor' viewBox='0 0 24 24'>
                 <path d='M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.026-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.838-1.563 3.036 0 3.598 2 3.598 4.59v5.606z'/>
               </svg>
             </div>
-            <h3 className='text-2xl font-bold text-white mb-3 group-hover:text-blue-300 transition-colors duration-300'>
+            <h3 className='text-xl sm:text-2xl font-bold text-white mb-2 sm:mb-3 group-hover:text-blue-300 transition-colors duration-300'>
               LinkedIn
             </h3>
-            <p className='text-gray-400 text-lg group-hover:text-white transition-colors duration-300'>
+            <p className='text-gray-400 text-sm sm:text-lg group-hover:text-white transition-colors duration-300'>
               @alvaropratama
             </p>
-            <div className='mt-4 text-sm text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+            <div className='mt-3 sm:mt-4 text-xs sm:text-sm text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
               View profile →
             </div>
           </div>
